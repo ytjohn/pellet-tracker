@@ -26,6 +26,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# TEMPLATE_LOADERS = (
+#     'django.template.loaders.eggs.Loader',
+# )
 
 # Application definition
 
@@ -37,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
     'ptracker',
 )
 
@@ -77,6 +81,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+#
+# REST_FRAMEWORK = {
+#     'DEFAULT_FILTER_BACKENDS': [
+#         'url_filter.integrations.drf.DjangoFilterBackend',
+#     ]
+# }
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/

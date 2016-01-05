@@ -1,7 +1,8 @@
 from django.db import models
+from django.utils import timezone
 
 class Bags(models.Model):
-    recorded = models.DateTimeField(auto_now_add=True)
+    recorded = models.DateTimeField(default=timezone.now)
     count = models.PositiveIntegerField(null=True)
     purchased = models.PositiveIntegerField(null=True)
     price = models.DecimalField(default=0.00, max_digits=5, decimal_places=2)
@@ -25,7 +26,7 @@ class Bags(models.Model):
 
     consumed = property(_consumed)
 class Hopper(models.Model):
-    recorded = models.DateTimeField(auto_now_add=True)
+    recorded = models.DateTimeField(default=timezone.now)
     level = models.PositiveIntegerField()
 
     def _consumed(self):
